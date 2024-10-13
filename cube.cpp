@@ -39,14 +39,15 @@ int main(){
     };
     
 
-
     while(1){
+
+
         for (auto &p : cube.points)
         {
             p.x -= cube.center.x;
             p.y -= cube.center.y;
             p.z -= cube.center.z;
-            rotate(p, 0.02, 0.02, 0.04);
+            rotate(p, 0.02*screen.xos, 0.02*screen.yos, 0.02*screen.zos);
             p.x += cube.center.x;
             p.y += cube.center.y;
             p.z += cube.center.z;
