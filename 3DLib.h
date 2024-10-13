@@ -32,17 +32,22 @@ class Figure {
 };
 
 void rotate(vec3 &point, float x = 1, float y = 1, float z = 1){
+
     float rad = 0;
+    vec3 OGpoint = point; //add this
 
     rad = x;
-    point.y = std::cos(rad) * point.y - std::sin(rad) * point.z;
-    point.z = std::sin(rad) * point.y + std::cos(rad) * point.z;
+    point.y = cos(rad) * OGpoint.y - sin(rad) * OGpoint.z;
+    point.z = sin(rad) * OGpoint.y + cos(rad) * OGpoint.z;
+    OGpoint = point; // add this
 
     rad = y;
-    point.x = std::cos(rad) * point.x - std::sin(rad) * point.z;
-    point.z = std::sin(rad) * point.x + std::cos(rad) * point.z;
+    point.x = cos(rad) * OGpoint.x + sin(rad) * OGpoint.z;
+    point.z = -sin(rad) * OGpoint.x + cos(rad) * OGpoint.z;
+    OGpoint = point; //add this
 
     rad = z;
-    point.x = std::cos(rad) * point.x - std::sin(rad) * point.y;
-    point.y = std::sin(rad) * point.x + std::cos(rad) * point.y;
+    point.x = cos(rad) * OGpoint.x - sin(rad) * OGpoint.y;
+    point.y = sin(rad) * OGpoint.x + cos(rad) * OGpoint.y;
+
 }
