@@ -3,6 +3,7 @@
 
 
 <h3 align="center">Spinning</h3>
+<h1 align="center">And gets smaller</h1>
 
 
 
