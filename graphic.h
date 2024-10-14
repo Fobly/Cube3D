@@ -10,7 +10,7 @@ class Screen{
     std::vector<SDL_FPoint> points;
 
     public:
-    signed char xos = 0, yos =0, zos=0;
+    signed char xos = 1, yos =1, zos=1;
     Screen(){
         SDL_Init(SDL_INIT_VIDEO);
         SDL_CreateWindowAndRenderer(640, 480, 0, &window, &renderer);
@@ -75,7 +75,16 @@ class Screen{
                         break;
                 }
             }else if (e.type == SDL_KEYUP) {
-                xos = yos = zos = 0;
+                switch (e.key.keysym.sym) {
+                    default:
+                        xos = yos = zos = 0;
+                        break;
+                    case SDLK_m:
+                        xos = yos = zos = 1;
+                        break;
+                    
+                }
+                
             }
         }
     }
